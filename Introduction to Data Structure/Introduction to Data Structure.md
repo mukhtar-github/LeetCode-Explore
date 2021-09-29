@@ -172,3 +172,16 @@ console.log(myArray)
 // Output:
 ["one", "two", "three", "four", "five"]
 ```
+
+As you can see in the output, the two items present in the *myArray2* have been added to the *myArray*. You can also concatenate two arrays to make another array using the *concat()* function. For example, let’s create an array by concatenating two existing arrays using the *concat()* function. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+var myArray2 = ['four', 'five']
+var myArray3 = myArray.concat(myArray2);
+console.log(myArray3)
+// Output:
+["four", "five", "one", "two", "three"]
+```
+
+You can change the order of the items present in the *myArray3* by changing the order of concatenation.
