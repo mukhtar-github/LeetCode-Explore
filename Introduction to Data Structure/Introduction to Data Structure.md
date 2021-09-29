@@ -115,3 +115,14 @@ console.log(myArray)
 // Output:
 ["one", "two", "three", "four"]
 ```
+
+In the above code, we added the item *four* at index 3 of the *myArray*. You can also replace the items present in the array using their index. Now let’s add an object to an array. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+var myArray2 = ['four', 'five']
+myArray[3] = myArray2;
+console.log(myArray)
+// Output:
+["one", "two", "three", Array(2)]
+```
