@@ -140,3 +140,35 @@ console.log(myArray)
 // Output:
 ["one", "two", "three", "four"]
 ```
+
+In the above code, we added the item *four* at the end of the *myArray*. Now let’s add an object to an array using the *push()* function. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+var myArray2 = ['four', 'five']
+myArray.push(myArray2);
+console.log(myArray)
+// Output:
+["one", "two", "three", Array(2)]
+```
+
+In the above code, we added an array object *myArray2* to an array *myArray* at the end. You can add objects of any data type to an array using the *push()* function. You can also add multiple values to an array by adding them in the *push()* function separated by a comma. To add the items or objects at the beginning of the array, we can use the *unshift()* function. For example, let’s add the item *four* at the beginning of the array *myArray*. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+myArray.unshift('four');
+console.log(myArray)
+// Output:
+["four", "one", "two", "three"]
+```
+
+As you can see in the output, the item *four* is added at the beginning of the array. Instead of adding an array object, you can add all of its items using the *push.apply()* function. For example, let’s add the items present in one array to the other array. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+var myArray2 = ['four', 'five']
+myArray.push.apply(myArray, myArray2);
+console.log(myArray)
+// Output:
+["one", "two", "three", "four", "five"]
+```
