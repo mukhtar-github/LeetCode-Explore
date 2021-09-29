@@ -91,4 +91,27 @@ It's exactly the same with the Array, where the space in your home is analogous 
 
 #### Writing Items into an Array
 
-To put a DVD into the Array, we need to decide which of the 15 places we'd like it to go in. Each of the places is identified using a number in the range of *0 to N - 1*. The 1st place is 0, the 2nd place is 1, the 3rd place is 2... all the way up to the 15th place, which is 14. We call these numbers that identify each place indexes.
+To put a DVD into the Array, we need to decide which of the 15 places we'd like it to go in. Each of the places is identified using a number in the range of *0 to N - 1*. The 1st place is 0, the 2nd place is 1, the 3rd place is 2... all the way up to the 15th place, which is 14. We call these numbers that identify each place **indexes**.
+
+Let's put the DVD for The Avengers into the eighth place of the Array we created above.
+
+```java
+// Firstly, we need to actually create a DVD object for The Avengers.
+DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
+
+// Next, we'll put it into the 8th place of the Array. Remember, because we
+// started numbering from 0, the index we want is 7.
+dvdCollection[7] = avengersDVD;
+```
+
+#### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
+
+To add items and objects to an array, you can use the assignment operator in JavaScript. You have to use the index to define the position inside the array where you want to put the item or object. If an existing item already occupies the defined index, the item will be replaced with the new item or object. For example, let’s create an array with three values and add an item at the end of the array using the assignment operator. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+myArray[3] = 'four';
+console.log(myArray)
+// Output:
+["one", "two", "three", "four"]
+```
