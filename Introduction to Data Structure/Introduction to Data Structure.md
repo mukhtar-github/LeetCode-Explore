@@ -126,3 +126,17 @@ console.log(myArray)
 // Output:
 ["one", "two", "three", Array(2)]
 ```
+
+In the above code, we added an array object *myArray2* to an array *myArray* at index 3. You can add objects of any data type to an array using the assignment operator.
+
+#### Add Items and Objects to an Array Using the push() Function in JavaScript
+
+To add items and objects to an array, you can use the *push()* function in JavaScript. The *push()* function adds an item or object at the end of an array. For example, let’s create an array with three values and add an item at the end of the array using the *push()* function. See the code below.
+
+```javascript
+var myArray = ['one', 'two', 'three'];
+myArray.push('four');
+console.log(myArray)
+// Output:
+["one", "two", "three", "four"]
+```
