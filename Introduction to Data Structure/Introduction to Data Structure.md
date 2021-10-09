@@ -533,4 +533,177 @@ seaCreatures;
     'lobster' ]
 ```
 
+In the *splice()* method, the first parameter stands for the index number to be removed (in this case, *7*), and the second parameter is how many items should be removed. We put *1*, signifying that only one item will be removed.
+
+The *splice()* method will change the original variable. If you would like the original variable to remain unchanged, use *slice()* and assign the result to a new variable. Here we will assign two variables, one that uses *slice()* to store the *seaCreatures* array from the first element until *whale*, and a second variable to store the elements *pufferfish* and *lobster*. To join the two arrays, we’ll use the *concat()* method to return the new array.
+
+```javascript
+let firstArray = seaCreatures.slice(0, 7);
+let secondArray = seaCreatures.slice(8, 10);
+
+firstArray.concat(secondArray);
+
+//Output
+[ 'dragonfish',
+    'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    'pufferfish',
+    'lobster' ]
+```
+
+Notice that when calling the *seaCreatures* variable, the items in the array remain unchanged.
+
+```javascript
+seaCreatures;
+
+//Output
+[ 'dragonfish',
+    'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    ,
+    'pufferfish',
+    'lobster' ]
+```
+
+The *pop()* method will remove the last item in an array.
+
+```javascript
+// Remove the last item from the seaCreatures array
+seaCreatures.pop();
+
+seaCreatures;
+
+//Output
+[ 'dragonfish',
+    'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    'pufferfish' ]
+```
+
+*lobster* has been removed as the last item of the array. In order to remove the first item of the array, we will use the *shift()* method.
+
+```javascript
+// Remove the first item from the seaCreatures array
+seaCreatures.shift();
+
+seaCreatures;
+
+//Output
+[ 'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    'pufferfish' ]
+```
+
+By using *pop() and shift()*, we can remove items from the beginning and the end of arrays. Using *pop()* is preferred wherever possible, as the rest of the items in the array retain their original index numbers.
+
+#### Modifying Items in Arrays
+
+We can overwrite any value in an array by assigning a new value using the assignment operator, just like we would with a regular variable.
+
+```javascript
+// Assign manatee to the first item in the seaCreatures array
+seaCreatures[0] = "manatee";
+
+seaCreatures;
+
+//Output
+[ 'manatee',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    'pufferfish' ]
+```
+
+Another way to modify a value is using the *splice()* method with a new parameter. If we wanted to change the value of *seahorse*, which is the item at index *3*, we could remove it and add a new item in its place.
+
+```javascript
+// Replace seahorse with sea lion using splice method
+seaCreatures.splice(3, 1, "sea lion");
+
+seaCreatures();
+
+//Output
+[ 'manatee',
+    'squid',
+    'shark',
+    'sea lion',
+    'starfish',
+    'whale',
+    'pufferfish' ]
+```
+
+In the above example, we removed *seahorse* from the array, and pushed a new value into index *3*.
+
+#### Looping Through an Array
+
+We can loop through the entirety of the array with the *for* keyword, taking advantage of the *length* property. In this example, we can create an array of *shellfish* and print out each index number as well as each value to the console.
+
+```javascript
+// Create an array of shellfish species
+let shellfish = [
+    "oyster",
+    "shrimp",
+    "clam",
+    "mussel",
+];
+
+// Loop through the length of the array
+for (let i = 0; i < shellfish.length; i++) {
+  console.log(i, shellfish[i]);
+}
+
+//Output
+0 'oyster'
+1 'shrimp'
+2 'clam'
+3 'mussel'
+```
+
+We can also use the *for...of* loop, a newer feature of JavaScript.
+
+```javascript
+// Create an array of aquatic mammals
+let mammals = [
+    "dolphin",
+    "whale",
+    "manatee",
+];
+
+// Loop through each mammal
+for (let mammal of mammals) {
+    console.log(mammal);
+}
+
+//Output
+dolphin
+whale
+manatee
+```
+
+The *for...of* loop does not retrieve the index number of the elements in the array, but it is generally a simpler, more concise way to loop through an array.
+
+Using loops is extremely useful for printing out the whole value of an array, such as when displaying the items from a database on a website.
+
+### Conclusion
+
+Arrays are an extremely versatile and fundamental part of programming in JavaScript. In this tutorial, we learned how to create an array, how arrays are indexed, and some of the most common tasks of working in arrays, such as creating, removing, and modifying items. We also learned two methods of looping through arrays, which is used as a common method to display data.
+
 #### Out Sourced Notes - End 4
