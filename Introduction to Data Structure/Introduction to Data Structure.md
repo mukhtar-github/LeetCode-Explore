@@ -104,6 +104,8 @@ DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
 dvdCollection[7] = avengersDVD;
 ```
 
+### Out Sourced Notes - Start
+
 #### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
 
 To add items and objects to an array, you can use the assignment operator in JavaScript. You have to use the index to define the position inside the array where you want to put the item or object. If an existing item already occupies the defined index, the item will be replaced with the new item or object. For example, let’s create an array with three values and add an item at the end of the array using the assignment operator. See the code below.
@@ -185,3 +187,33 @@ console.log(myArray3)
 ```
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
+
+### Out Sourced Notes - Stop
+
+#### Writing Items into an Array - Continue
+
+And that's it. We've put the DVD for The Avengers into our Array! Let's put a few more DVD's in.
+
+```java
+DVD incrediblesDVD = new DVD("The Incredibles", 2004, "Brad Bird");
+DVD findingDoryDVD = new DVD("Finding Dory", 2016, "Andrew Stanton");
+DVD lionKingDVD = new DVD("The Lion King", 2019, "Jon Favreau");
+
+// Put "The Incredibles" into the 4th place: index 3.
+dvdCollection[3] = incrediblesDVD;
+
+// Put "Finding Dory" into the 10th place: index 9.
+dvdCollection[9] = findingDoryDVD;
+
+// Put "The Lion King" into the 3rd place: index 2.
+dvdCollection[2] = lionKingDVD;
+```
+
+Notice that we put The Incredibles into the Array at index *3*. What happens if we now run this next piece of code?
+
+```java
+DVD starWarsDVD = new DVD("Star Wars", 1977, "George Lucas");
+dvdCollection[3] = starWarsDVD;
+```
+
+Because we just put Star Wars into the Array at index *3*, The Incredibles is no longer in the Array. It has been overwritten! If we still have the *incrediblesDVD* variable in scope, then the DVD still exists in the computer's memory. If not though, it's totally gone!
