@@ -702,7 +702,7 @@ The *for...of* loop does not retrieve the index number of the elements in the ar
 
 Using loops is extremely useful for printing out the whole value of an array, such as when displaying the items from a database on a website.
 
-### Conclusion
+#### Conclusion
 
 Arrays are an extremely versatile and fundamental part of programming in JavaScript. In this tutorial, we learned how to create an array, how arrays are indexed, and some of the most common tasks of working in arrays, such as creating, removing, and modifying items. We also learned two methods of looping through arrays, which is used as a common method to display data.
 
