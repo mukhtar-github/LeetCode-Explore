@@ -296,4 +296,30 @@ The first item in the array is *octopus*, which is indexed at *0*. The last item
 
 We can find out how many items are in an array with the *length* property.
 
+```javascript
+seaCreatures.length;
+
+Output
+5
+```
+
+Although the indices of *seaCreatures* consist of *0 to 4*, the *length* property will output the actual amount of items in the array, starting with 1.
+
+If we want to find out the index number of a specific item in an array, such as *seahorse*, we can use the *indexOf()* method.
+
+```javascript
+seaCreatures.indexOf("seahorse");
+
+Output
+3
+
+//If an index number is not found, such as for a value that does not exist, the console will return -1.
+seaCreatures.indexOf("cuttlefish");
+
+Output
+-1
+```
+
+With index numbers that correspond to items within an array, we’re able to access each item discretely in order to work with those items.
+
 #### Out Sourced Notes - End 3
