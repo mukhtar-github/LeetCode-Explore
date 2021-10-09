@@ -377,3 +377,52 @@ for (int square : squareNumbers) {
 ```
 
 You'll probably agree that this code is a lot simpler to read. We can use it whenever we don't need the index values. For actually writing the squares into the Array, it wouldn't have worked because we needed to work with the actual index numbers. You don't have to use a "for each" loop when you're starting out, but we recommend you become comfortable with it before interviews. Simple, elegant code is good code!
+
+#### Out Sourced Notes - Start 4
+
+#### Accessing Items in an Array
+
+An item in a JavaScript array is accessed by referring to the index number of the item in square brackets.
+
+```javascript
+seaCreatures[1];
+
+Output
+squid
+```
+
+We know *0* will always output the first item in an array. We can also find the last item in an array by performing an operation on the *length* property and applying that as the new index number.
+
+```javascript
+const lastIndex = seaCreatures.length - 1;
+
+seaCreatures[lastIndex];
+
+Output
+starfish
+
+// Attempting to access an item that doesn’t exist will return undefined.
+seaCreatures[10];
+
+Output
+undefined
+```
+
+In order to access items in a nested array, you would add another index number to correspond to the inner array.
+
+```javascript
+let nestedArray = [
+    [
+        "salmon",
+        "halibut",
+    ],
+    [
+        "coral",
+        "reef",
+    ]
+];
+
+nestedArray[1][0];
+```
+
+#### Out Sourced Notes - End 4
