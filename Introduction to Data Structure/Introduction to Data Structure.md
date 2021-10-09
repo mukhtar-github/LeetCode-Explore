@@ -66,7 +66,7 @@ public class DVD {
 }
 ```
 
-#### Out Sourced Notes - Start
+#### Out Sourced Notes - Start 1
 
 #### Creating an Array in JavaScript
 
@@ -84,7 +84,17 @@ let sharks = [
     "Great White",
     "Tiger",
 ];
+```
 
+Now here is the same data created with the array constructor, which is initialized with *new Array()*.
+
+```javascript
+// Initialize array of shark species with array constructor
+let sharks = new Array(
+    "Hammerhead",
+    "Great White",
+    "Tiger",
+);
 
 var foo = new Array(45); // create an empty array with length 45
 
@@ -93,6 +103,8 @@ for(var i = 0; i < foo.length; i++){
   document.write('Item: ' + (i + 1) + ' of ' + foo.length + '<br/>'); 
 }
 ```
+
+#### Out Sourced Notes - End 1
 
 After running the above code, we now have an Array called dvdCollection, with 15 places in it. Each place can hold one DVD. At the start, there are no DVD's in the Array; we'll have to actually put them in.
 
@@ -123,7 +135,7 @@ DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
 dvdCollection[7] = avengersDVD;
 ```
 
-#### Out Sourced Notes - Start
+#### Out Sourced Notes - Start 2
 
 #### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
 
@@ -207,7 +219,7 @@ console.log(myArray3)
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
 
-#### Out Sourced Notes - End
+#### Out Sourced Notes - End 2
 
 #### Writing Items into an Array - Continue
 
