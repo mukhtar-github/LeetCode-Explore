@@ -104,6 +104,8 @@ for(var i = 0; i < foo.length; i++){
 }
 ```
 
+Both methods will create an array. However, the array literal (square brackets) method is much more common and preferred, as the *new Array()* constructor method may have inconsistencies and unexpected results. It’s useful to be aware of the array constructor in case you encounter it down the line.
+
 #### Out Sourced Notes - End 1
 
 After running the above code, we now have an Array called dvdCollection, with 15 places in it. Each place can hold one DVD. At the start, there are no DVD's in the Array; we'll have to actually put them in.
