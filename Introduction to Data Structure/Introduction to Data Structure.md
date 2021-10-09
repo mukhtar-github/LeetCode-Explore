@@ -387,7 +387,7 @@ An item in a JavaScript array is accessed by referring to the index number of th
 ```javascript
 seaCreatures[1];
 
-Output
+//Output
 squid
 ```
 
@@ -398,13 +398,13 @@ const lastIndex = seaCreatures.length - 1;
 
 seaCreatures[lastIndex];
 
-Output
+//Output
 starfish
 
 // Attempting to access an item that doesn’t exist will return undefined.
 seaCreatures[10];
 
-Output
+//Output
 undefined
 ```
 
@@ -423,6 +423,114 @@ let nestedArray = [
 ];
 
 nestedArray[1][0];
+
+//Output
+coral
+```
+
+In the above example, we accessed the array at position *1* of the *nestedArray* variable, then the item at position *0* in the inner array.
+
+#### Adding an Item to an Array
+
+In our *seaCreatures* variable we had five items, which consisted of the indices from *0 to 4*. If we want to add a new item to the array, we can assign a value to the next index.
+
+```javascript
+seaCreatures[5] = "whale";
+
+seaCreatures;
+
+//Output
+[ 'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale' ]
+
+// If we add an item and accidentally skip an index, it will create an undefined item in the array.
+seaCreatures[7] = "pufferfish";
+
+seaCreatures;
+
+//Output
+[ 'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    ,
+    'pufferfish' ]
+
+// Attempting to access the extra array item will return undefined.
+seaCreatures[6]
+
+//Output
+undefined
+```
+
+Issues like that can be avoided by using the *push()* method, which adds an item to the end of an array.
+
+```javascript
+// Append lobster to the end of the seaCreatures array
+seaCreatures.push("lobster");
+
+seaCreatures;
+
+//Output
+[ 'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    ,
+    'whale',
+    'pufferfish',
+    'lobster' ]
+```
+
+On the other end of the spectrum, the *unshift()* method will add an item to the beginning of an array.
+
+```javascript
+// Append dragonfish to the beginning of the seaCreatures array
+seaCreatures.unshift("dragonfish");
+
+seaCreatures;
+
+//Output
+[ 'dragonfish',
+    'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    ,
+    'pufferfish',
+    'lobster' ]
+```
+
+Between *push() and unshift()* you will be able to apend items to the beginning and end of an array.
+
+#### Removing an Item from an Array
+
+When we want to remove a specific item from an array, we use the *splice()* method. In the *seaCreatures* array, we accidentally created an undefined array item earlier, so let’s remove that now.
+
+```javascript
+seaCreatures.splice(7, 1);
+
+seaCreatures;
+
+//Output
+[ 'dragonfish',
+    'octopus',
+    'squid',
+    'shark',
+    'seahorse',
+    'starfish',
+    'whale',
+    'pufferfish',
+    'lobster' ]
 ```
 
 #### Out Sourced Notes - End 4
