@@ -66,9 +66,26 @@ public class DVD {
 }
 ```
 
-#### JavaScript Code for Creating an Array
+#### Out Sourced Notes - Start
+
+#### Creating an Array in JavaScript
+
+There are two ways to create an array in JavaScript:
+
+* The array literal, which uses square brackets.
+* The array constructor, which uses the new keyword.
+
+Let’s demonstrate how to create an array of shark species using the array literal, which is initialized with *[]*.
 
 ```javascript
+// Initialize array of shark species with array literal
+let sharks = [
+    "Hammerhead",
+    "Great White",
+    "Tiger",
+];
+
+
 var foo = new Array(45); // create an empty array with length 45
 
 // then when you want to use it... (un-optimized, just for example)
@@ -106,7 +123,7 @@ DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
 dvdCollection[7] = avengersDVD;
 ```
 
-### Out Sourced Notes - Start
+#### Out Sourced Notes - Start
 
 #### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
 
@@ -190,7 +207,7 @@ console.log(myArray3)
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
 
-### Out Sourced Notes - End
+#### Out Sourced Notes - End
 
 #### Writing Items into an Array - Continue
 
@@ -219,3 +236,22 @@ dvdCollection[3] = starWarsDVD;
 ```
 
 Because we just put Star Wars into the Array at index *3*, The Incredibles is no longer in the Array. It has been overwritten! If we still have the *incrediblesDVD* variable in scope, then the DVD still exists in the computer's memory. If not though, it's totally gone!
+
+#### Reading Items from an Array
+
+We can check what's at a particular Array index.
+
+```java
+// Print out what's in indexes 7, 10, and 3.
+System.out.println(dvdCollection[7]);
+System.out.println(dvdCollection[10]);
+System.out.println(dvdCollection[3]);
+
+// Will print:
+
+// The Avengers, directed by Joss Whedon, released in 2012
+// null
+// Star Wars, directed by George Lucas, released in 1977
+```
+
+Notice that because we haven't yet put anything at index 10, the value it contains is *null*. In other languages, such as *C*, the Array slot could contain completely random data. Java always initializes empty Array slots to *null* if the Array contains objects, or to default values if it contains primitive types. For example, the array *int []* would contain the default value of *0* for each element, *float[]* would contain default values of *0.0*, and *bool[]* would contain default values of *false*.
