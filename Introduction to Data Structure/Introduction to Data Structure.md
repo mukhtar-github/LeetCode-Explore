@@ -66,6 +66,8 @@ public class DVD {
 }
 ```
 
+#### JavaScript Code for Creating an Array
+
 ```javascript
 var foo = new Array(45); // create an empty array with length 45
 
