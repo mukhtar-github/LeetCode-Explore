@@ -323,3 +323,57 @@ Output
 With index numbers that correspond to items within an array, we’re able to access each item discretely in order to work with those items.
 
 #### Out Sourced Notes - End 3
+
+#### Writing Items into an Array with a Loop
+
+We commonly use a loop to put lots of values into an Array. To illustrate this, let's go to another example. This time, we're going to create an Array of *int*s and put the first *10* square numbers into it.
+
+```java
+int[] squareNumbers = new int[10];
+
+// Go through each of the Array indexes, from 0 to 9.
+for (int i = 0; i < 10; i++) {
+    // We need to be careful with the 0-indexing. The next square number
+    // is given by (i + 1) * (i + 1).
+    // Calculate it and insert it into the Array at index i.
+    int square = (i + 1) * (i + 1);
+    squareNumbers[i] = square;
+}
+```
+
+#### Reading Items from an Array with a Loop
+
+We can also use a loop to print out everything that's in the Array.
+
+```java
+// Go through each of the Array indexes, from 0 to 9.
+for (int i = 0; i < 10; i++) {
+    // Access and print what's at the i'th index.
+    System.out.println(squareNumbers[i]);
+}
+
+// Will print:
+// 1
+// 4
+// 9
+// 16
+// 25
+// 36
+// 49
+// 64
+// 81
+// 100
+```
+
+One last thing worth knowing now is that there's a more elegant way of printing out the values of an Array — a variant of the *for* loop, commonly referred to as a "for each" loop.
+
+```java
+// For each VALUE in the Array.
+for (int square : squareNumbers) {
+    // Print the current value of square.
+    System.out.println(square);
+}
+// Prints exactly the same as the previous example.
+```
+
+You'll probably agree that this code is a lot simpler to read. We can use it whenever we don't need the index values. For actually writing the squares into the Array, it wouldn't have worked because we needed to work with the actual index numbers. You don't have to use a "for each" loop when you're starting out, but we recommend you become comfortable with it before interviews. Simple, elegant code is good code!
