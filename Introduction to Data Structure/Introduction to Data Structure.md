@@ -707,3 +707,7 @@ Using loops is extremely useful for printing out the whole value of an array, su
 Arrays are an extremely versatile and fundamental part of programming in JavaScript. In this tutorial, we learned how to create an array, how arrays are indexed, and some of the most common tasks of working in arrays, such as creating, removing, and modifying items. We also learned two methods of looping through arrays, which is used as a common method to display data.
 
 #### Out Sourced Notes - End 4
+
+### Array Capacity VS Length
+
+> If somebody asks you how long the DVD Array is, what what would your answer be?
