@@ -268,4 +268,32 @@ System.out.println(dvdCollection[3]);
 // Star Wars, directed by George Lucas, released in 1977
 ```
 
-Notice that because we haven't yet put anything at index 10, the value it contains is *null*. In other languages, such as *C*, the Array slot could contain completely random data. Java always initializes empty Array slots to *null* if the Array contains objects, or to default values if it contains primitive types. For example, the array *int []* would contain the default value of *0* for each element, *float[]* would contain default values of *0.0*, and *bool[]* would contain default values of *false*.
+Notice that because we haven't yet put anything at index 10, the value it contains is *null*. In other languages, such as *C*, the Array slot could contain completely random data. Java always initializes empty Array slots to *null* if the Array contains objects, or to default values if it contains primitive types. For example, the array *int [ ]* would contain the default value of *0* for each element, *float[ ]* would contain default values of *0.0*, and *bool[ ]* would contain default values of *false*.
+
+#### Out Sourced Notes - Start 3
+
+#### Indexing Arrays
+
+Arrays do not have name/value pairs. Instead, they are indexed with integer values beginning with *0*. Here is an example array, assigned to *seaCreatures*.
+
+```javascript
+let seaCreatures = [
+    "octopus",
+    "squid",
+    "shark",
+    "seahorse",
+    "starfish",
+];
+```
+
+Here is a breakdown of how each item in the *seaCreatures* array is indexed.
+
+| octopus | squid | shark | seahorse | starfish |
+|---------|-------|-------|----------|----------|
+|    0    |   1   |   2   |     3    |     4    |
+
+The first item in the array is *octopus*, which is indexed at *0*. The last item is *starfish*, which is indexed at *4*. Counting starts with *0* in indices, which goes against our natural intuition to start counting at 1, so special care must be taken to remember this until it becomes natural.
+
+We can find out how many items are in an array with the *length* property.
+
+#### Out Sourced Notes - End 3
