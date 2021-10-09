@@ -190,7 +190,7 @@ console.log(myArray3)
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
 
-### Out Sourced Notes - Stop
+### Out Sourced Notes - End
 
 #### Writing Items into an Array - Continue
 
