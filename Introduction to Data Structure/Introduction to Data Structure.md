@@ -736,3 +736,19 @@ The Array's capacity must be decided when the Array is created. The capacity can
 So, what do we do if we get a 7th DVD and we'd like all our DVD's in the same Array? Well, unfortunately it's the same as it is with our cardboard box. We'll need to go get a larger one, and then move all the existing DVD's into it, along with the new one.
 
 The **capacity** of an Array in Java can be checked by looking at the value of its *length* attribute. This is done using the code *arr.length*, where *arr* is the name of the Array. Different programming languages have different ways of checking the length of an Array.
+
+```java
+int capacity = array.length;
+System.out.println("The Array has a capacity of " + capacity);
+```
+
+Running this code will give the following output:
+> The Array has a capacity of 6
+
+Yup, it's a bit confusing that you need to access the capacity of an Array by using *.length*. Unfortunately, this is just something you'll need to get used to.
+
+#### Array Length
+
+The other definition of **length** is the number of DVDs, or other items, currently in the Array. This is something you'll need to keep track of yourself, and you won't get any errors if you overwrite an existing DVD, or if you leave a gap in the Array.
+
+You might have noticed that we've been using a *length* variable in our previous examples, to keep track of the next empty index.
