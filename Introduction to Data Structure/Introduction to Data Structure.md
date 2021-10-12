@@ -711,3 +711,10 @@ Arrays are an extremely versatile and fundamental part of programming in JavaScr
 ### Array Capacity VS Length
 
 > If somebody asks you how long the DVD Array is, what what would your answer be?
+
+There are two different answers you might have given.
+
+1. The number of DVDs the box could hold, if it was full, or
+2. The number of DVDs currently in the box.
+
+Both answers are correct, and both have very different meanings! It's important to understand the difference between them, and use them correctly. We call the first one the capacity of the Array, and the second one the length of the Array.
