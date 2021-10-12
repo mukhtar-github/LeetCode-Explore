@@ -773,5 +773,4 @@ System.out.println("The Array has a length of " + length);
 
 Running this code will give the following output:
 > The Array has a capacity of 6
-The Array has a length of 3
-
+> The Array has a length of 3
