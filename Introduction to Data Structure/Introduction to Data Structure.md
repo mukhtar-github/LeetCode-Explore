@@ -730,3 +730,9 @@ DVD[] array = new DVD[6]
 Is it a valid operation to insert an element at *array[6]*? What about at *array[10]*? Nope, neither of these are valid. When we created the Array, we specified that it can hold up to *6* DVD's. This is the Array's **capacity**.
 
 Remembering that indexing starts at *0*, we can only insert items at *array[0], array[1], array[2], array[3], array[4], and array[5]*. Trying to put an element anywhere else, such as *array[-3], array[6], or array[100]* will cause your code to crash with an *ArrayIndexOutOfBoundsException*!
+
+The Array's capacity must be decided when the Array is created. The capacity cannot be changed later. Going back to our DVD's-in-a-cardboard-box-analogy, changing the capacity of an Array would be akin to trying to make a cardboard box bigger. Trying to make a fixed-size cardboard box bigger is impractical, and it's the same as an Array on a computer!
+
+So, what do we do if we get a 7th DVD and we'd like all our DVD's in the same Array? Well, unfortunately it's the same as it is with our cardboard box. We'll need to go get a larger one, and then move all the existing DVD's into it, along with the new one.
+
+The **capacity** of an Array in Java can be checked by looking at the value of its *length* attribute. This is done using the code *arr.length*, where *arr* is the name of the Array. Different programming languages have different ways of checking the length of an Array.
