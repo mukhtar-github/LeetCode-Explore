@@ -717,4 +717,16 @@ There are two different answers you might have given.
 1. The number of DVDs the box could hold, if it was full, or
 2. The number of DVDs currently in the box.
 
-Both answers are correct, and both have very different meanings! It's important to understand the difference between them, and use them correctly. We call the first one the capacity of the Array, and the second one the length of the Array.
+Both answers are correct, and both have very different meanings! It's important to understand the difference between them, and use them correctly. We call the first one the *capacity* of the Array, and the second one the *length* of the Array.
+
+#### Array Capacity
+
+Let's say we've created a new Array like this.
+
+```java
+DVD[] array = new DVD[6]
+```
+
+Is it a valid operation to insert an element at *array[6]*? What about at *array[10]*? Nope, neither of these are valid. When we created the Array, we specified that it can hold up to *6* DVD's. This is the Array's **capacity**.
+
+Remembering that indexing starts at *0*, we can only insert items at *array[0], array[1], array[2], array[3], array[4], and array[5]*. Trying to put an element anywhere else, such as *array[-3], array[6], or array[100]* will cause your code to crash with an *ArrayIndexOutOfBoundsException*!
