@@ -786,7 +786,7 @@ And here is the code template you're given.
 
 The only parameter is *nums*; an Array. You couldn't possibly solve this question without knowing how long *nums* is. Well, luckily it's straightforward. When an Array is given as a parameter, without any additional information, you can safely assume that **length == capacity**. That is, the Array is the exact right size to hold all of it's data. We can, therefore, use *.length*.
 
-Be careful though, Array's are 0-indexed. The capacity/ length is a number of items, not a highest index. The highest index is *.length - 1*. Therefore, to iterate over all items in the Array, we can do the following.
+Be careful though, Array's are 0-indexed. The *capacity/ length* is a number of items, not a highest index. The highest index is *.length - 1*. Therefore, to iterate over all items in the Array, we can do the following.
 
 ```java
 class Solution {
