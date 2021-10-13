@@ -776,3 +776,14 @@ Running this code will give the following output:
 > The Array has a capacity of 6
 
 > The Array has a length of 3
+
+#### Handling Array Parameters
+
+Most Array questions on LeetCode have an Array passed in as a parameter, with no "length" or "capacity" parameter. What do we mean by this? Well, let's look at an example. Here is the description for the first problem you'll be asked to solve.
+> Given a binary array, find the maximum number of consecutive 1s in this array.
+
+And here is the code template you're given.
+
+The only parameter is *nums*; an Array. You couldn't possibly solve this question without knowing how long *nums* is. Well, luckily it's straightforward. When an Array is given as a parameter, without any additional information, you can safely assume that **length == capacity**. That is, the Array is the exact right size to hold all of it's data. We can, therefore, use *.length*.
+
+Be careful though, Array's are 0-indexed. The capacity/ length is a number of items, not a highest index. The highest index is *.length - 1*. Therefore, to iterate over all items in the Array, we can do the following.
