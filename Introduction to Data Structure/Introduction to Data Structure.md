@@ -832,5 +832,19 @@ You need to think about two things as far as any window is concerned. One is the
 #### Answer 1
 
 ```javascript
+const findMaxConsecutiveOnes = (nums) => {
+  let max = 0;
+  let cur = 0;
+  for (const num of nums) {
+    num ? ++cur > max && (max = cur) : (cur = 0);
+  }
+  return max;
+};
 
+// Your input
+[1,1,0,1,1,1]
+//Output
+3
+// Expected
+3
 ```
