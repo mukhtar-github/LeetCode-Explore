@@ -2,7 +2,7 @@
 
 ## Arrays 101
 
-### Introduction
+### Overview (Introduction)
 
 Arrays are a simple data structure for storing lots of similar items. They exist in all programming languages, and are used as the basis for most other data structures. On their own, Arrays can be used to solve many interesting problems. Arrays come up very often in interview problems, and so being a guru with them is a must!
 
@@ -17,7 +17,9 @@ After completing this Explore Card on Arrays, you will understand:
 * Implementing basic Array operations.
 * Simple programming techniques with Arrays.
 
-### Array - A DVD box?
+### Introduction
+
+#### Array - A DVD box?
 
 Suppose you had a bunch of DVDs at home that you wanted to arrange neatly. What would be the ideal choice for storing such a thing? You could find a cardboard box (or some other box) big enough to arrange all of the DVDs neatly, right? It's as simple as that. However, you might want to add a new DVD to the box, or you might want to get rid of the old ones that you've watched a million times over in the past. An important consideration for this box would be that you would only place DVDs in it and nothing else; you wouldn't place your clothes in it, for example. The box would contain multiple items, but all of them would be of the same type. In this case, that type is DVD. Items of the same type share properties. For DVDs, those properties include:
 
@@ -31,13 +33,13 @@ Suppose you were told that you needed to build some software to keep track of al
 
 In addition to the properties of a DVD, you're also told the maximum number of DVDs that can be stored in the inventory. Obviously, you wouldn't want to store ancient movies from the 1900s unless they were popular ones, right? Say you were told that the requirement is to maintain a maximum inventory of just 100 DVDs. This is an important piece of information because, without this, you wouldn't be able to find the perfectly sized box to fit all the DVDs easily. How could we find a box of a particular size that would be able to fit a maximum of 100 DVDs? Well, lucky for us, we don't need to physically find a cardboard box or anything—there's a programming construct for this purpose. That programming construct is known as an *Array*.
 
-### What Is an Array?
+#### What Is an Array?
 
 > An Array is a collection of items. The items could be integers, strings, DVDs, games, books—anything really. The items are stored in neighboring (contiguous) memory locations. Because they're stored together, checking through the entire collection of items is straightforward.
 
 So, how can we relate this back to the physical DVDs? Well, do you keep your DVDs all around the house in multiple locations? Hopefully not! Most people keep all of their DVDs right next to one another inside one gigantic box, or perhaps on a bookshelf. We do this so that if we need to find a particular DVD, we can quickly search through all of them without running from room to room.
 
-#### Creating an Array
+##### Creating an Array
 
 On a computer, Arrays can hold up to N items. The value of N is decided by you, the programmer, at the time you create the Array. This is the same as when we found a big enough cardboard box for the DVDs. Additionally, you also need to specify the type of item that will be going into the Array.
 
@@ -66,7 +68,7 @@ public class DVD {
 }
 ```
 
-#### Out Sourced Notes - Start 1
+##### Out Sourced Notes - Start 1
 
 #### Creating an Array in JavaScript
 
@@ -106,7 +108,7 @@ for(var i = 0; i < foo.length; i++){
 
 Both methods will create an array. However, the array literal (square brackets) method is much more common and preferred, as the *new Array()* constructor method may have inconsistencies and unexpected results. It’s useful to be aware of the array constructor in case you encounter it down the line.
 
-#### Out Sourced Notes - End 1
+##### Out Sourced Notes - End 1
 
 After running the above code, we now have an Array called dvdCollection, with 15 places in it. Each place can hold one DVD. At the start, there are no DVD's in the Array; we'll have to actually put them in.
 
@@ -118,11 +120,11 @@ Well, the reason is the same as it is for the physical box of DVDs. Do you reall
 
 It's exactly the same with the Array, where the space in your home is analogous to memory on the computer. If you make an Array with 1000000 spaces, the computer will reserve memory to hold 1000000 DVDs, even if you only put 15 DVDs into it. That memory can't be used for anything else in the meantime—just like the space in your house that has been taken over by that huge cardboard box!
 
-### Accessing Elements in Arrays
+#### Accessing Elements in Arrays
 
 > The two most primitive Array operations are writing elements into them, and reading elements from them. All other Array operations are built on top of these two primitive operations.
 
-#### Writing Items into an Array
+##### Writing Items into an Array
 
 To put a DVD into the Array, we need to decide which of the 15 places we'd like it to go in. Each of the places is identified using a number in the range of *0 to N - 1*. The 1st place is 0, the 2nd place is 1, the 3rd place is 2... all the way up to the 15th place, which is 14. We call these numbers that identify each place **indexes**.
 
@@ -137,7 +139,7 @@ DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
 dvdCollection[7] = avengersDVD;
 ```
 
-#### Out Sourced Notes - Start 2
+##### Out Sourced Notes - Start 2
 
 #### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
 
@@ -221,7 +223,7 @@ console.log(myArray3)
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
 
-#### Out Sourced Notes - End 2
+##### Out Sourced Notes - End 2
 
 #### Writing Items into an Array - Continue
 
@@ -251,7 +253,7 @@ dvdCollection[3] = starWarsDVD;
 
 Because we just put Star Wars into the Array at index *3*, The Incredibles is no longer in the Array. It has been overwritten! If we still have the *incrediblesDVD* variable in scope, then the DVD still exists in the computer's memory. If not though, it's totally gone!
 
-#### Reading Items from an Array
+##### Reading Items from an Array
 
 We can check what's at a particular Array index.
 
@@ -270,7 +272,7 @@ System.out.println(dvdCollection[3]);
 
 Notice that because we haven't yet put anything at index 10, the value it contains is *null*. In other languages, such as *C*, the Array slot could contain completely random data. Java always initializes empty Array slots to *null* if the Array contains objects, or to default values if it contains primitive types. For example, the array *int [ ]* would contain the default value of *0* for each element, *float[ ]* would contain default values of *0.0*, and *bool[ ]* would contain default values of *false*.
 
-#### Out Sourced Notes - Start 3
+##### Out Sourced Notes - Start 3
 
 #### Indexing Arrays
 
@@ -322,9 +324,9 @@ Output
 
 With index numbers that correspond to items within an array, we’re able to access each item discretely in order to work with those items.
 
-#### Out Sourced Notes - End 3
+##### Out Sourced Notes - End 3
 
-#### Writing Items into an Array with a Loop
+##### Writing Items into an Array with a Loop
 
 We commonly use a loop to put lots of values into an Array. To illustrate this, let's go to another example. This time, we're going to create an Array of *int*s and put the first *10* square numbers into it.
 
@@ -341,7 +343,7 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-#### Reading Items from an Array with a Loop
+##### Reading Items from an Array with a Loop
 
 We can also use a loop to print out everything that's in the Array.
 
@@ -378,7 +380,7 @@ for (int square : squareNumbers) {
 
 You'll probably agree that this code is a lot simpler to read. We can use it whenever we don't need the index values. For actually writing the squares into the Array, it wouldn't have worked because we needed to work with the actual index numbers. You don't have to use a "for each" loop when you're starting out, but we recommend you become comfortable with it before interviews. Simple, elegant code is good code!
 
-#### Out Sourced Notes - Start 4
+##### Out Sourced Notes - Start 4
 
 #### Accessing Items in an Array
 
@@ -430,7 +432,7 @@ coral
 
 In the above example, we accessed the array at position *1* of the *nestedArray* variable, then the item at position *0* in the inner array.
 
-#### Adding an Item to an Array
+##### Adding an Item to an Array
 
 In our *seaCreatures* variable we had five items, which consisted of the indices from *0 to 4*. If we want to add a new item to the array, we can assign a value to the next index.
 
@@ -512,7 +514,7 @@ seaCreatures;
 
 Between *push() and unshift()* you will be able to apend items to the beginning and end of an array.
 
-#### Removing an Item from an Array
+##### Removing an Item from an Array
 
 When we want to remove a specific item from an array, we use the *splice()* method. In the *seaCreatures* array, we accidentally created an undefined array item earlier, so let’s remove that now.
 
@@ -706,9 +708,9 @@ Using loops is extremely useful for printing out the whole value of an array, su
 
 Arrays are an extremely versatile and fundamental part of programming in JavaScript. In this tutorial, we learned how to create an array, how arrays are indexed, and some of the most common tasks of working in arrays, such as creating, removing, and modifying items. We also learned two methods of looping through arrays, which is used as a common method to display data.
 
-#### Out Sourced Notes - End 4
+##### Out Sourced Notes - End 4
 
-### Array Capacity VS Length
+#### Array Capacity VS Length
 
 > If somebody asks you how long the DVD Array is, what what would your answer be?
 
@@ -719,7 +721,7 @@ There are two different answers you might have given.
 
 Both answers are correct, and both have very different meanings! It's important to understand the difference between them, and use them correctly. We call the first one the *capacity* of the Array, and the second one the *length* of the Array.
 
-#### Array Capacity
+##### Array Capacity
 
 Let's say we've created a new Array like this.
 
@@ -747,7 +749,7 @@ Running this code will give the following output:
 
 Yup, it's a bit confusing that you need to access the capacity of an Array by using *.length*. Unfortunately, this is just something you'll need to get used to.
 
-#### Array Length
+##### Array Length
 
 The other definition of **length** is the number of DVDs, or other items, currently in the Array. This is something you'll need to keep track of yourself, and you won't get any errors if you overwrite an existing DVD, or if you leave a gap in the Array.
 
@@ -775,7 +777,7 @@ Running this code will give the following output:
 > The Array has a capacity of 6
 The Array has a length of 3
 
-#### Handling Array Parameters
+##### Handling Array Parameters
 
 Most Array questions on LeetCode have an Array passed in as a parameter, with no "length" or "capacity" parameter. What do we mean by this? Well, let's look at an example. Here is the description for the first problem you'll be asked to solve.
 > Given a binary array, find the maximum number of consecutive 1s in this array.
@@ -802,7 +804,7 @@ And that is the basics of Arrays that you'll need to get started! In the next ch
 
 Before that though, we have a few introductory Array problems for you to play around with, starting with the one we briefly looked at above. Enjoy!
 
-### Max Consecutive Ones
+#### Max Consecutive Ones
 
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
@@ -849,7 +851,7 @@ const findMaxConsecutiveOnes = (nums) => {
 3
 ```
 
-### Find Numbers with Even Number of Digits
+#### Find Numbers with Even Number of Digits
 
 Given an array nums of integers, return how many of them contain an even number of digits.
 
@@ -910,7 +912,7 @@ return even;
 var findNumbers = (nums) => nums.map(String).filter(num => num.length % 2 === 0).length;
 ```
 
-### Squares of a Sorted Array
+#### Squares of a Sorted Array
 
 Given an integer array *nums* sorted in **non-decreasing** order, return an array of **the squares of each number** sorted in non-decreasing order.
 
@@ -960,7 +962,19 @@ var sortedSquares = function(nums) {
 [0,1,9,16,100]
 ```
 
-## Basic Array Operations
+### Inserting Items Into an Array
+
+In the previous chapter, we looked at what Arrays are, and the basic programming constructs of Arrays in Java. We're now going to use these basic constructs to implement three key operations for Arrays:
+
+* Inserting items.
+* Removing items.
+* Searching for items.
+
+These three operations are the fundamental operations for all data structures.
+
+In this chapter, we'll be starting with **inserting items into an array**. Like before, we'll approach the learning with lots of examples and programming snippets. After that, there are some more interview questions for you to practice on. We hope you have fun!
+
+#### Basic Array Operations
 
 Now that we have a fairly good understanding of what an Array actually is, and how it is stored inside the computer's physical memory, the next important thing to look at is all the operations that Arrays support. An Array is a data structure, which means that it stores data in a specific format and supports certain operations on the data it stores. Consider the DVD inventory management software from the introduction section. Let's look at some operations you might want to perform using this software:
 
@@ -969,3 +983,33 @@ Now that we have a fairly good understanding of what an Array actually is, and h
 * **Search** for a particular DVD in the collection. This is one of the most commonly executed operation on our collection, because our inventory management software would be used hundreds of times a day to look for a particular DVD asked for by the user.
 
 In this section, we'll be looking at the three basic operations that are supported by almost every data structure; **insertion**, **deletion**, and **search**.
+
+#### Array Insertions
+
+>In the previous chapter, we looked at how to write elements to an Array. There is a lot more to inserting elements though, as we're about to see!
+
+Inserting a new element into an Array can take many forms:
+
+1. Inserting a new element at the end of the Array.
+2. Inserting a new element at the beginning of the Array.
+3. Inserting a new element at any given index inside the Array.
+
+##### Inserting at the End of an Array
+
+At any point in time, we know the index of the last element of the Array, as we've kept track of it in our *length* variable. All we need to do for inserting an element at the end is to assign the new element to one index past the current last element.
+
+![Array_Insertion_1](https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/Figures/Array_Explore/Array_Insertion_1.png)
+
+This is pretty much the same as we've already seen. Here's the code to make a new Array that can hold up to *6* items, and then add items into the first *3* three indexes.
+
+```java
+// Declare an integer array of 6 elements
+int intArray = new int[6];
+int length = 0;
+
+// Add 3 elements to the Array
+for (int i = 0; i < 3; i++) {
+    intArray[length] = i;
+    length++;
+}
+```
