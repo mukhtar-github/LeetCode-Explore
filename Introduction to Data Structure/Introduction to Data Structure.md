@@ -887,3 +887,25 @@ Hint #1: How to compute the number of digits of a number ?
 
 Hint #2: Divide the number by 10 again and again to get the number of digits.
 
+#### Answer
+
+```javascript
+var findNumbers = function(nums) {
+var even = 0;
+for(var i=0;i<nums.length;i++){
+if(nums[i].toString().length % 2 === 0){
+even++;
+}
+}
+return even;
+};
+
+// Your input
+[12,345,2,6,7896]
+//Output
+2
+// Expected
+2
+
+var findNumbers = (nums) => nums.map(String).filter(num => num.length % 2 === 0).length;
+```
