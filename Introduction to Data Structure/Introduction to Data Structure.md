@@ -887,7 +887,7 @@ Hint #1: How to compute the number of digits of a number ?
 
 Hint #2: Divide the number by 10 again and again to get the number of digits.
 
-#### Answer
+#### Answer 2
 
 ```javascript
 var findNumbers = function(nums) {
@@ -908,4 +908,54 @@ return even;
 2
 
 var findNumbers = (nums) => nums.map(String).filter(num => num.length % 2 === 0).length;
+```
+
+### Squares of a Sorted Array
+
+Given an integer array *nums* sorted in **non-decreasing** order, return an array of **the squares of each number** sorted in non-decreasing order.
+
+Example 1:
+
+Input: nums = [-4,-1,0,3,10]
+
+Output: [0,1,9,16,100]
+
+Explanation: After squaring, the array becomes [16,1,0,9,100].
+After sorting, it becomes [0,1,9,16,100].
+
+Example 2:
+
+Input: nums = [-7,-3,2,3,11]
+
+Output: [4,9,9,49,121]
+
+Constraints:
+
+* 1 <= nums.length <= 10^4
+* -104 <= nums[i] <= 10^4
+* nums is sorted in non-decreasing order.
+
+Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
+
+#### Answer 3
+
+```javascript
+var sortedSquares = function(nums) {
+    let squared = [], l = 0, r = nums.length - 1;
+
+    while (l <= r) {
+        if (Math.abs(nums[l]) > Math.abs(nums[r]))
+            squared.push(nums[l++] ** 2);
+        else
+            squared.push(nums[r--] ** 2);
+    }
+    return squared.reverse();
+};
+
+// Your input
+[-4,-1,0,3,10]
+//Output
+[0,1,9,16,100]
+// Expected
+[0,1,9,16,100]
 ```
