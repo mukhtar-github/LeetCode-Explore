@@ -380,9 +380,9 @@ for (int square : squareNumbers) {
 
 You'll probably agree that this code is a lot simpler to read. We can use it whenever we don't need the index values. For actually writing the squares into the Array, it wouldn't have worked because we needed to work with the actual index numbers. You don't have to use a "for each" loop when you're starting out, but we recommend you become comfortable with it before interviews. Simple, elegant code is good code!
 
-##### Out Sourced Notes - Start 4
+#### Out Sourced Notes - Start 4
 
-#### Accessing Items in an Array
+### Accessing Items in an Array
 
 An item in a JavaScript array is accessed by referring to the index number of the item in square brackets.
 
@@ -432,7 +432,7 @@ coral
 
 In the above example, we accessed the array at position *1* of the *nestedArray* variable, then the item at position *0* in the inner array.
 
-##### Adding an Item to an Array
+#### Adding an Item to an Array
 
 In our *seaCreatures* variable we had five items, which consisted of the indices from *0 to 4*. If we want to add a new item to the array, we can assign a value to the next index.
 
@@ -514,7 +514,7 @@ seaCreatures;
 
 Between *push() and unshift()* you will be able to apend items to the beginning and end of an array.
 
-##### Removing an Item from an Array
+#### Removing an Item from an Array
 
 When we want to remove a specific item from an array, we use the *splice()* method. In the *seaCreatures* array, we accidentally created an undefined array item earlier, so let’s remove that now.
 
@@ -614,7 +614,7 @@ seaCreatures;
 
 By using *pop() and shift()*, we can remove items from the beginning and the end of arrays. Using *pop()* is preferred wherever possible, as the rest of the items in the array retain their original index numbers.
 
-#### Modifying Items in Arrays
+### Modifying Items in Arrays
 
 We can overwrite any value in an array by assigning a new value using the assignment operator, just like we would with a regular variable.
 
@@ -654,7 +654,7 @@ seaCreatures();
 
 In the above example, we removed *seahorse* from the array, and pushed a new value into index *3*.
 
-#### Looping Through an Array
+### Looping Through an Array
 
 We can loop through the entirety of the array with the *for* keyword, taking advantage of the *length* property. In this example, we can create an array of *shellfish* and print out each index number as well as each value to the console.
 
@@ -704,13 +704,13 @@ The *for...of* loop does not retrieve the index number of the elements in the ar
 
 Using loops is extremely useful for printing out the whole value of an array, such as when displaying the items from a database on a website.
 
-#### Conclusion
+### Conclusion
 
 Arrays are an extremely versatile and fundamental part of programming in JavaScript. In this tutorial, we learned how to create an array, how arrays are indexed, and some of the most common tasks of working in arrays, such as creating, removing, and modifying items. We also learned two methods of looping through arrays, which is used as a common method to display data.
 
-##### Out Sourced Notes - End 4
+#### Out Sourced Notes - End 4
 
-#### Array Capacity VS Length
+### Array Capacity VS Length
 
 > If somebody asks you how long the DVD Array is, what what would your answer be?
 
@@ -721,7 +721,7 @@ There are two different answers you might have given.
 
 Both answers are correct, and both have very different meanings! It's important to understand the difference between them, and use them correctly. We call the first one the *capacity* of the Array, and the second one the *length* of the Array.
 
-##### Array Capacity
+#### Array Capacity
 
 Let's say we've created a new Array like this.
 
