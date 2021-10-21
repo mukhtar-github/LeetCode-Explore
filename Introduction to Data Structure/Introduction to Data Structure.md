@@ -68,9 +68,9 @@ public class DVD {
 }
 ```
 
-##### Out Sourced Notes - Start 1
+#### Out Sourced Notes - Start 1
 
-#### Creating an Array in JavaScript
+### Creating an Array in JavaScript
 
 There are two ways to create an array in JavaScript:
 
@@ -108,7 +108,7 @@ for(var i = 0; i < foo.length; i++){
 
 Both methods will create an array. However, the array literal (square brackets) method is much more common and preferred, as the *new Array()* constructor method may have inconsistencies and unexpected results. It’s useful to be aware of the array constructor in case you encounter it down the line.
 
-##### Out Sourced Notes - End 1
+#### Out Sourced Notes - End 1
 
 After running the above code, we now have an Array called dvdCollection, with 15 places in it. Each place can hold one DVD. At the start, there are no DVD's in the Array; we'll have to actually put them in.
 
@@ -120,11 +120,11 @@ Well, the reason is the same as it is for the physical box of DVDs. Do you reall
 
 It's exactly the same with the Array, where the space in your home is analogous to memory on the computer. If you make an Array with 1000000 spaces, the computer will reserve memory to hold 1000000 DVDs, even if you only put 15 DVDs into it. That memory can't be used for anything else in the meantime—just like the space in your house that has been taken over by that huge cardboard box!
 
-#### Accessing Elements in Arrays
+### Accessing Elements in Arrays
 
 > The two most primitive Array operations are writing elements into them, and reading elements from them. All other Array operations are built on top of these two primitive operations.
 
-##### Writing Items into an Array
+#### Writing Items into an Array
 
 To put a DVD into the Array, we need to decide which of the 15 places we'd like it to go in. Each of the places is identified using a number in the range of *0 to N - 1*. The 1st place is 0, the 2nd place is 1, the 3rd place is 2... all the way up to the 15th place, which is 14. We call these numbers that identify each place **indexes**.
 
@@ -139,9 +139,9 @@ DVD avengersDVD = new DVD("The Avengers", 2012, "Joss Whedon");
 dvdCollection[7] = avengersDVD;
 ```
 
-##### Out Sourced Notes - Start 2
+#### Out Sourced Notes - Start 2
 
-#### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
+### Add Items and Objects to an Array Using the Assignment Operator in JavaScript
 
 To add items and objects to an array, you can use the assignment operator in JavaScript. You have to use the index to define the position inside the array where you want to put the item or object. If an existing item already occupies the defined index, the item will be replaced with the new item or object. For example, let’s create an array with three values and add an item at the end of the array using the assignment operator. See the code below.
 
@@ -166,7 +166,7 @@ console.log(myArray)
 
 In the above code, we added an array object *myArray2* to an array *myArray* at index 3. You can add objects of any data type to an array using the assignment operator.
 
-#### Add Items and Objects to an Array Using the push() Function in JavaScript
+### Add Items and Objects to an Array Using the push() Function in JavaScript
 
 To add items and objects to an array, you can use the *push()* function in JavaScript. The *push()* function adds an item or object at the end of an array. For example, let’s create an array with three values and add an item at the end of the array using the *push()* function. See the code below.
 
@@ -223,9 +223,9 @@ console.log(myArray3)
 
 You can change the order of the items present in the *myArray3* by changing the order of concatenation.
 
-##### Out Sourced Notes - End 2
+#### Out Sourced Notes - End 2
 
-#### Writing Items into an Array - Continue
+### Writing Items into an Array - Continue
 
 And that's it. We've put the DVD for The Avengers into our Array! Let's put a few more DVD's in.
 
@@ -253,7 +253,7 @@ dvdCollection[3] = starWarsDVD;
 
 Because we just put Star Wars into the Array at index *3*, The Incredibles is no longer in the Array. It has been overwritten! If we still have the *incrediblesDVD* variable in scope, then the DVD still exists in the computer's memory. If not though, it's totally gone!
 
-##### Reading Items from an Array
+#### Reading Items from an Array
 
 We can check what's at a particular Array index.
 
@@ -272,9 +272,9 @@ System.out.println(dvdCollection[3]);
 
 Notice that because we haven't yet put anything at index 10, the value it contains is *null*. In other languages, such as *C*, the Array slot could contain completely random data. Java always initializes empty Array slots to *null* if the Array contains objects, or to default values if it contains primitive types. For example, the array *int [ ]* would contain the default value of *0* for each element, *float[ ]* would contain default values of *0.0*, and *bool[ ]* would contain default values of *false*.
 
-##### Out Sourced Notes - Start 3
+#### Out Sourced Notes - Start 3
 
-#### Indexing Arrays
+### Indexing Arrays
 
 Arrays do not have name/value pairs. Instead, they are indexed with integer values beginning with *0*. Here is an example array, assigned to *seaCreatures*.
 
@@ -324,9 +324,9 @@ Output
 
 With index numbers that correspond to items within an array, we’re able to access each item discretely in order to work with those items.
 
-##### Out Sourced Notes - End 3
+#### Out Sourced Notes - End 3
 
-##### Writing Items into an Array with a Loop
+#### Writing Items into an Array with a Loop
 
 We commonly use a loop to put lots of values into an Array. To illustrate this, let's go to another example. This time, we're going to create an Array of *int*s and put the first *10* square numbers into it.
 
@@ -343,7 +343,7 @@ for (int i = 0; i < 10; i++) {
 }
 ```
 
-##### Reading Items from an Array with a Loop
+#### Reading Items from an Array with a Loop
 
 We can also use a loop to print out everything that's in the Array.
 
