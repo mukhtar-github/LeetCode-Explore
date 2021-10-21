@@ -749,7 +749,7 @@ Running this code will give the following output:
 
 Yup, it's a bit confusing that you need to access the capacity of an Array by using *.length*. Unfortunately, this is just something you'll need to get used to.
 
-##### Array Length
+#### Array Length
 
 The other definition of **length** is the number of DVDs, or other items, currently in the Array. This is something you'll need to keep track of yourself, and you won't get any errors if you overwrite an existing DVD, or if you leave a gap in the Array.
 
@@ -777,7 +777,7 @@ Running this code will give the following output:
 > The Array has a capacity of 6
 The Array has a length of 3
 
-##### Handling Array Parameters
+#### Handling Array Parameters
 
 Most Array questions on LeetCode have an Array passed in as a parameter, with no "length" or "capacity" parameter. What do we mean by this? Well, let's look at an example. Here is the description for the first problem you'll be asked to solve.
 > Given a binary array, find the maximum number of consecutive 1s in this array.
@@ -804,7 +804,7 @@ And that is the basics of Arrays that you'll need to get started! In the next ch
 
 Before that though, we have a few introductory Array problems for you to play around with, starting with the one we briefly looked at above. Enjoy!
 
-#### Max Consecutive Ones
+### Max Consecutive Ones
 
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
@@ -831,7 +831,7 @@ Hint #1
 
 You need to think about two things as far as any window is concerned. One is the starting point for the window. How do you detect that a new window of 1s has started? The next part is detecting the ending point for this window. How do you detect the ending point for an existing window? If you figure these two things out, you will be able to detect the windows of consecutive ones. All that remains afterward is to find the longest such window and return the size.
 
-#### Answer 1
+### Answer 1
 
 ```javascript
 const findMaxConsecutiveOnes = (nums) => {
@@ -851,7 +851,7 @@ const findMaxConsecutiveOnes = (nums) => {
 3
 ```
 
-#### Find Numbers with Even Number of Digits
+### Find Numbers with Even Number of Digits
 
 Given an array nums of integers, return how many of them contain an even number of digits.
 
@@ -889,7 +889,7 @@ Hint #1: How to compute the number of digits of a number ?
 
 Hint #2: Divide the number by 10 again and again to get the number of digits.
 
-#### Answer 2
+### Answer 2
 
 ```javascript
 var findNumbers = function(nums) {
@@ -912,7 +912,7 @@ return even;
 var findNumbers = (nums) => nums.map(String).filter(num => num.length % 2 === 0).length;
 ```
 
-#### Squares of a Sorted Array
+### Squares of a Sorted Array
 
 Given an integer array *nums* sorted in **non-decreasing** order, return an array of **the squares of each number** sorted in non-decreasing order.
 
@@ -939,7 +939,7 @@ Constraints:
 
 Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
 
-#### Answer 3
+### Answer 3
 
 ```javascript
 var sortedSquares = function(nums) {
@@ -962,7 +962,7 @@ var sortedSquares = function(nums) {
 [0,1,9,16,100]
 ```
 
-### Inserting Items Into an Array
+## Inserting Items Into an Array
 
 In the previous chapter, we looked at what Arrays are, and the basic programming constructs of Arrays in Java. We're now going to use these basic constructs to implement three key operations for Arrays:
 
@@ -974,7 +974,7 @@ These three operations are the fundamental operations for all data structures.
 
 In this chapter, we'll be starting with **inserting items into an array**. Like before, we'll approach the learning with lots of examples and programming snippets. After that, there are some more interview questions for you to practice on. We hope you have fun!
 
-#### Basic Array Operations
+### Basic Array Operations
 
 Now that we have a fairly good understanding of what an Array actually is, and how it is stored inside the computer's physical memory, the next important thing to look at is all the operations that Arrays support. An Array is a data structure, which means that it stores data in a specific format and supports certain operations on the data it stores. Consider the DVD inventory management software from the introduction section. Let's look at some operations you might want to perform using this software:
 
@@ -984,7 +984,7 @@ Now that we have a fairly good understanding of what an Array actually is, and h
 
 In this section, we'll be looking at the three basic operations that are supported by almost every data structure; **insertion**, **deletion**, and **search**.
 
-#### Array Insertions
+### Array Insertions
 
 >In the previous chapter, we looked at how to write elements to an Array. There is a lot more to inserting elements though, as we're about to see!
 
@@ -994,7 +994,7 @@ Inserting a new element into an Array can take many forms:
 2. Inserting a new element at the beginning of the Array.
 3. Inserting a new element at any given index inside the Array.
 
-##### Inserting at the End of an Array
+#### Inserting at the End of an Array
 
 At any point in time, we know the index of the last element of the Array, as we've kept track of it in our *length* variable. All we need to do for inserting an element at the end is to assign the new element to one index past the current last element.
 
@@ -1013,4 +1013,3 @@ for (int i = 0; i < 3; i++) {
     length++;
 }
 ```
-
