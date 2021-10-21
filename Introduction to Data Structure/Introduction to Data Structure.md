@@ -1032,3 +1032,16 @@ Index 3 contains 0.
 Index 4 contains 0.
 Index 5 contains 0.
 ```
+
+Notice how indexes *3, 4,* and *5* all contain *0*? This is because Java fills unused *int* Array slots with *0*s.
+
+Let's now add a 4th element. We'll add the number 10.
+
+```java
+
+// Insert a new element at the end of the Array. Again,
+// it's important to ensure that there is enough space
+// in the array for inserting a new element.
+intArray[length] = 10;
+length++;
+```
