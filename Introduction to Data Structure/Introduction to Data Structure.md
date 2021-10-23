@@ -976,7 +976,7 @@ In this chapter, we'll be starting with **inserting items into an array**. Like 
 
 ### Basic Array Operations
 
-Now that we have a fairly good understanding of what an *Array* actually is, and how it is stored inside the computer's physical memory, the next important thing to look at is all the operations that Arrays support. An *Array* is a **data structure**, which means that it stores data in a specific format and supports certain operations on the data it stores. Consider the DVD inventory management software from the introduction section. Let's look at some operations you might want to perform using this software:
+Now that we have a fairly good understanding of what an *Array* actually is, and how it is stored inside the computer's physical memory, the next important thing to look at is all the operations that Arrays support. An *Array* is a **data structure**, which means that it stores data in a specific format and supports certain operations on the data it stores. Consider the *DVD inventory management software* from the introduction section. Let's look at some operations you might want to perform using this software:
 
 * **Insert** a new DVD into the collection at a specific location.
 * **Delete** a DVD from the existing collection if it doesn't make sense to keep it in the inventory anymore.
