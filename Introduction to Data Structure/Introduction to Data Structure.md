@@ -1097,3 +1097,8 @@ Index 5 contains 0.
 Similarly, for inserting at any given index, we first need to shift all the elements from that index onwards one position to the right. Once the space is created for the new element, we proceed with the insertion. If you think about it, insertion at the beginning is basically a special case of inserting an element at a given index—in that case, the given index was *0*.
 
 ![Array_Insertion_3](https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/Figures/Array_Explore/Array_Insertion_3.png)
+
+Again, this is also a costly operation since we could *potentially* have to shift almost all the other elements to the right before actually inserting the new element. As your saw above, shifting lots of elements one place to the right adds to the time complexity of the insertion task.
+
+Here's what it looks like in code.
+
