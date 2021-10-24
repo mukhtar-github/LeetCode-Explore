@@ -1095,3 +1095,5 @@ Index 5 contains 0.
 ### Inserting Anywhere in the Array
 
 Similarly, for inserting at any given index, we first need to shift all the elements from that index onwards one position to the right. Once the space is created for the new element, we proceed with the insertion. If you think about it, insertion at the beginning is basically a special case of inserting an element at a given index—in that case, the given index was *0*.
+
+![Array_Insertion_3](https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/Figures/Array_Explore/Array_Insertion_3.png)
