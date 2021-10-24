@@ -1102,3 +1102,27 @@ Again, this is also a costly operation since we could *potentially* have to shif
 
 Here's what it looks like in code.
 
+```java
+// Say we want to insert the element at index 2.
+// First, we will have to create space for the new element.
+for (int i = 4; i >= 2; i--)
+{
+    // Shift each element one position to the right.
+    intArray[i + 1] = intArray[i];
+}
+
+// Now that we have created space for the new element,
+// we can insert it at the required index.
+intArray[2] = 30;
+```
+
+And here's the result of running *printArray*.
+
+```java
+Index 0 contains 20.
+Index 1 contains 0.
+Index 2 contains 30.
+Index 3 contains 1.
+Index 4 contains 2.
+Index 5 contains 10.
+```
