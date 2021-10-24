@@ -1045,3 +1045,16 @@ Let's now add a 4th element. We'll add the number 10.
 intArray[length] = 10;
 length++;
 ```
+
+Notice how we also incremented the length? This is very important, next time when we add another element, we'll accidentally overwrite the one we just added!
+
+Running *printArray* again, we'll get the following:
+
+```java
+Index 0 contains 0.
+Index 1 contains 1.
+Index 2 contains 2.
+Index 3 contains 10.
+Index 4 contains 0.
+Index 5 contains 0.
+```
