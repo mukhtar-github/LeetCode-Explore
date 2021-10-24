@@ -1065,3 +1065,18 @@ To insert an element at the start of an Array, we'll need to shift all other ele
 
 ![Array_Insertion_2](https://leetcode.com/explore/learn/card/fun-with-arrays/525/inserting-items-into-an-array/Figures/Array_Explore/Array_Insertion_2.png)
 
+Here's what this looks like in code.
+
+```java
+// First, we will have to create space for a new element.
+// We do that by shifting each element one index to the right.
+// This will firstly move the element at index 3, then 2, then 1, then finally 0.
+// We need to go backwards to avoid overwriting any elements.
+for (int i = 3; i >= 0; i--) {
+    intArray[i + 1] = intArray[i];
+}
+
+// Now that we have created space for the new element,
+// we can insert it at the beginning.
+intArray[0] = 20;
+```
