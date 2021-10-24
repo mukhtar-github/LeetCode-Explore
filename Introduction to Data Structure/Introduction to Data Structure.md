@@ -1080,3 +1080,18 @@ for (int i = 3; i >= 0; i--) {
 // we can insert it at the beginning.
 intArray[0] = 20;
 ```
+
+And here's the result of running printArray.
+
+```java
+Index 0 contains 20.
+Index 1 contains 0.
+Index 2 contains 1.
+Index 3 contains 2.
+Index 4 contains 10.
+Index 5 contains 0.
+```
+
+### Inserting Anywhere in the Array
+
+Similarly, for inserting at any given index, we first need to shift all the elements from that index onwards one position to the right. Once the space is created for the new element, we proceed with the insertion. If you think about it, insertion at the beginning is basically a special case of inserting an element at a given index—in that case, the given index was *0*.
