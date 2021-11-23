@@ -1131,7 +1131,7 @@ Does that all sound good? The main thing to be careful of is remembering that *a
 
 We now have a fun problem for you to test your understanding on. Enjoy!
 
-### Duplicate Zeros
+### 1089. Duplicate Zeros
 
 Given a fixed-length integer array *arr*, duplicate each occurrence of zero, shifting the remaining elements to the right.
 
@@ -1157,3 +1157,41 @@ Constraints:
 
 * 1 <= arr.length <= 10^4
 * 0 <= arr[i] <= 9
+
+Hint #1
+
+* This is a great introductory problem for understanding and working with the concept of in-place operations. The problem statement clearly states that we are to modify the array in-place. That does not mean we cannot use another array. We just don't have to return anything.
+
+Hint #2
+
+* A better way to solve this would be without using additional space. The only reason the problem statement allows you to make modifications in place is that it hints at avoiding any additional memory.
+
+Hint #3
+
+* The main problem with not using additional memory is that we might override elements due to the zero duplication requirement of the problem statement. How do we get around that?
+
+Hint #4
+
+* If we had enough space available, we would be able to accommodate all the elements properly. The new length would be the original length of the array plus the number of zeros. Can we use this information somehow to solve the problem?
+
+### Answer 4
+
+```javascript
+var duplicateZeros = function(arr) {
+    for(let i = 0; i < arr.length; i++) {
+        if(arr[i] === 0) {
+            arr.splice(i, 0, 0);
+            i = i + 1;
+            arr.pop()
+        }
+       
+    }
+};
+
+// Your input
+[1,0,2,3,0,4,5,0]
+//Output
+[1,0,0,2,3,0,0,4]
+// Expected
+[1,0,0,2,3,0,0,4]
+```
