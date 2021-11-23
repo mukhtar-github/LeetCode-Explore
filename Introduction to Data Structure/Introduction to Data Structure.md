@@ -1195,3 +1195,171 @@ var duplicateZeros = function(arr) {
 // Expected
 [1,0,0,2,3,0,0,4]
 ```
+
+### 88. Merge Sorted Array
+
+You are given two integer arrays *nums1 and nums2*, sorted in *non-decreasing order*, and two integers *m and n*, representing the number of elements in *nums1 and nums2* respectively.
+
+*Merge nums1 and nums2* into a single array sorted in *non-decreasing order*.
+
+The final sorted array should not be returned by the function, but instead be stored inside the array *nums1*. To accommodate this, *nums1* has a length of *m + n*, where the first *m* elements denote the elements that should be merged, and the last *n* elements are set to *0* and should be ignored. *nums2* has a length of *n*.
+
+Example 1:
+
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+
+Output: [1,2,2,3,5,6]
+
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+Example 2:
+
+Input: nums1 = [1], m = 1, nums2 = [], n = 0
+
+Output: [1]
+
+Explanation: The arrays we are merging are [1] and [].
+The result of the merge is [1].
+Example 3:
+
+Input: nums1 = [0], m = 0, nums2 = [1], n = 1
+
+Output: [1]
+
+Explanation: The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+
+Constraints:
+
+* nums1.length == m + n
+* nums2.length == n
+* 0 <= m, n <= 200
+* 1 <= m + n <= 200
+* -10^9 <= nums1[i], nums2[j] <= 10^9
+
+Follow up: Can you come up with an algorithm that runs in O(m + n) time?
+
+Hint #1
+
+* You can easily solve this problem if you simply think about two elements at a time rather than two arrays. We know that each of the individual arrays is sorted. What we don't know is how they will intertwine. Can we take a local decision and arrive at an optimal solution?
+
+Hint #2
+
+* If you simply consider one element each at a time from the two arrays and make a decision and proceed accordingly, you will arrive at the optimal solution.
+
+### Answer 5
+
+```javascript
+var merge = function(nums1, m, nums2, n) {
+    
+    let i = 0;
+    let j = 0;
+    
+    while (nums2[j] !== undefined) {
+        if (nums1[i] <= nums2[j] && i < m) {
+            i++;
+        } else if (nums1[i] <= nums2[j] && i >= m) {
+            nums1.splice(i, 1, nums2[j]);
+            i++;
+            j++;
+        } else {
+            nums1.splice(i, 0, nums2[j]);
+            nums1.pop();
+            m++;
+            i++;
+            j++;
+        }
+    }
+};
+
+var merge =(a,m,b,n)=>{
+
+while (n>0 ){
+    if(a[m-1]> b[n-1]){
+        a[m+n-1]=a[m-1];
+        m-=1;
+    }
+    else{
+        a[m+n-1]=b[n-1];
+        n-=1;
+    }
+}
+// return a;
+};
+
+// Your input
+[1,2,3,0,0,0]
+3
+[2,5,6]
+3
+//Output
+[1,2,2,3,5,6]
+// Expected
+[1,2,2,3,5,6]
+```
+
+## Deleting Items From an Array
+
+Next on the agenda is insertion's complement—deletion.
+
+### Array Deletions
+
+> Now that we know how insertion works, it's time to look at its complement—deletion!
+
+Deletion in an Array works in a very similar manner to insertion, and has the same three different cases:
+
+1. Deleting the last element of the Array.
+2. Deleting the first element of the Array.
+3. Deletion at any given index.
+
+#### Deleting From the End of an Array
+
+Deletion at the end of an Array is similar to people standing in a line, also known as a *queue*. The person who most recently joined the queue (at the end) can leave at any time without disturbing the rest of the *queue*. Deleting from the end of an Array is the least time consuming of the three cases. Recall that insertion at the end of an Array was also the least time-consuming case for insertion.
+
+![Array_Deletion_1](https://leetcode.com/explore/learn/card/fun-with-arrays/526/deleting-items-from-an-array/Figures/Array_Explore/Array_Deletion_1.png)
+
+So, how does this work in code? Before we look at this, let's quickly remind ourselves what the length of an Array means. Here is some code that creates an Array with room for 10 elements, and then adds elements into the first 6 indexes of it.
+
+```java
+// Declare an integer array of 10 elements.
+int[] intArray = new int[10];
+
+// The array currently contains 0 elements
+int length = 0;
+
+// Add elements at the first 6 indexes of the Array.
+for(int i = 0; i < 6; i++) {
+    intArray[length] = i;
+    length++;
+}
+```
+
+Notice the *length* variable. Essentially, this variable keeps track of the next index that is free for inserting a new element. This is always the same value as the overall length of the Array. Note that when we declare an Array of a certain size, we simply fix the maximum number of elements it could contain. Initially, the Array doesn't contain anything. Thus, when we add new elements, we also increment the *length* variable accordingly.
+
+Anyway, here's the code for deleting the last element of an Array.
+
+```java
+// Deletion from the end is as simple as reducing the length
+// of the array by 1.
+length--;
+
+
+// Remember how insertion we were using this printArray function?
+for (int i = 0; i < intArray.length; i++) {
+    System.out.println("Index " + i + " contains " + intArray[i]);
+}
+
+
+// Well, if we run it here, we'll get the following result, regardless of whether we run it before or after removing the last element.
+Index 0 contains 0.
+Index 1 contains 1.
+Index 2 contains 2.
+Index 3 contains 3.
+Index 4 contains 4.
+Index 5 contains 5.
+Index 6 contains 0.
+Index 7 contains 0.
+Index 8 contains 0.
+Index 9 contains 0.
+```
