@@ -1343,15 +1343,19 @@ Anyway, here's the code for deleting the last element of an Array.
 // Deletion from the end is as simple as reducing the length
 // of the array by 1.
 length--;
+```
 
+Remember how insertion we were using this printArray function?
 
-// Remember how insertion we were using this printArray function?
+```java
 for (int i = 0; i < intArray.length; i++) {
     System.out.println("Index " + i + " contains " + intArray[i]);
 }
+```
 
+Well, if we run it here, we'll get the following result, regardless of whether we run it before or after removing the last element.
 
-// Well, if we run it here, we'll get the following result, regardless of whether we run it before or after removing the last element.
+```java
 Index 0 contains 0.
 Index 1 contains 1.
 Index 2 contains 2.
@@ -1363,3 +1367,5 @@ Index 7 contains 0.
 Index 8 contains 0.
 Index 9 contains 0.
 ```
+
+What's gone wrong? Well, remember how there's two different definitions of length? When we use *intArray.length*, we're looking every valid index of the Array. When in fact, we only want to look at the ones that we've put values into. The fix is easy, we just iterate up to our own *length* variable instead.
