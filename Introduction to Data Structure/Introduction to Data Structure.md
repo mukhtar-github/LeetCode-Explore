@@ -1369,3 +1369,20 @@ Index 9 contains 0.
 ```
 
 What's gone wrong? Well, remember how there's two different definitions of length? When we use *intArray.length*, we're looking every valid index of the Array. When in fact, we only want to look at the ones that we've put values into. The fix is easy, we just iterate up to our own *length* variable instead.
+
+```java
+for (int i = 0; i < length; i++) {
+    System.out.println("Index " + i + " contains " + intArray[i]);
+}
+```
+
+Run this, and you'll get the following before the deletion:
+
+```java
+Index 0 contains 0.
+Index 1 contains 1.
+Index 2 contains 2.
+Index 3 contains 3.
+Index 4 contains 4.
+Index 5 contains 5.
+```
