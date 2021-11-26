@@ -1386,3 +1386,51 @@ Index 3 contains 3.
 Index 4 contains 4.
 Index 5 contains 5.
 ```
+
+And the following after:
+
+```java
+Index 0 contains 0.
+Index 1 contains 1.
+Index 2 contains 2.
+Index 3 contains 3.
+Index 4 contains 4.
+```
+
+Yup, that's it! Even though we call it a deletion, its not like we actually freed up the space for a new element, right? This is because we don't actually need to free up any space. Simply overwriting the value at a certain index deletes the element at that index. Seeing as the length variable in our examples tells us the next index where we can insert a new element, reducing it by one ensures the next new element is written over the deleted one. This also indicates that the Array now contains one less element, which is exactly what we want programmatically.
+
+#### Deleting From the Start of an Array
+
+Next comes the costliest of all deletion operations for an Array—deleting the first element. If we want to delete the first element of the Array, that will create a vacant spot at the *0th* index. To fill that spot, we will shift the element at index *1* one step to the left. Going by the ripple effect, every element all the way to the last one will be shifted one place to the left. This shift of elements takes *O(N)* time, where *N* is the number of elements in the Array.
+
+![Array_Deletion_2](https://leetcode.com/explore/learn/card/fun-with-arrays/526/deleting-items-from-an-array/Figures/Array_Explore/Array_Deletion_2.png)
+
+Here is how deleting the first element looks in code.
+
+```java
+// Starting at index 1, we shift each element one position
+// to the left.
+for (int i = 1; i < length; i++) {
+    // Shift each element one position to the left
+    int_array[i - 1] = int_array[i];
+}
+
+// Note that it's important to reduce the length of the array by 1.
+// Otherwise, we'll lose consistency of the size. This length
+// variable is the only thing controlling where new elements might
+// get added.
+length--;
+```
+
+Starting from index *0*, we'll move every element one position to its left, effectively "deleting" the element at index *0*. We also need to reduce *length* by *1* so that the next new element is inserted in the correct position.
+
+And here's the output we'll get, with our updated *printArray* function.
+
+```java
+Index 0 contains 1.
+Index 1 contains 2.
+Index 2 contains 3.
+Index 3 contains 4.
+```
+
+#### Deleting From Anywhere in the Array
