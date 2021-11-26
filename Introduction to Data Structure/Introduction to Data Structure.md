@@ -1434,3 +1434,35 @@ Index 3 contains 4.
 ```
 
 #### Deleting From Anywhere in the Array
+
+For deletion at any given index, the empty space created by the deleted item will need to be filled. Each of the elements to the right of the index we're deleting at will get shifted to the left by one. Deleting the first element of an Array is a special case of deletion at a given index, where the index is *0*. This shift of elements takes *O(K)* time where *K* is the number of elements to the right of the given index. Since potentially *K = N*, we say that the time complexity of this operation is also *O(N)*.
+
+![Array_Deletion_3](https://leetcode.com/explore/learn/card/fun-with-arrays/526/deleting-items-from-an-array/Figures/Array_Explore/Array_Deletion_3.png)
+
+Here is the code to delete the element at index 1. To do this, we'll need to move over the elements after it in the Array.
+
+```java
+// Say we want to delete the element at index 1
+for (int i = 2; i < length; i++) {
+    // Shift each element one position to the left
+    int_array[i - 1] = int_array[i];
+}
+
+// Again, the length needs to be consistent with the current
+// state of the array.
+length--;
+```
+
+Notice that this works exactly like deleting the first element, except that we don't touch the elements that are at lower indexes than the element we're deleting.
+
+Here is the output from the *printArray* function.
+
+```java
+Index 0 contains 1.
+Index 1 contains 3.
+Index 2 contains 4.
+```
+
+Did that all make sense? To help you cement what you've learned, here's a couple of programming problems for you to try. You should try to solve them without making a new Array. Do this by using the deletion techniques we've investigated above.
+
+Once you're done, we'll look at *searching Arrays*!
