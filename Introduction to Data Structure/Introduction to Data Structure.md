@@ -1580,4 +1580,3 @@ var removeElement = function(nums, val) {
 // Expected
 [2,2]
 ```
-
