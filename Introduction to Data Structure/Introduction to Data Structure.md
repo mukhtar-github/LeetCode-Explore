@@ -1466,3 +1466,54 @@ Index 2 contains 4.
 Did that all make sense? To help you cement what you've learned, here's a couple of programming problems for you to try. You should try to solve them without making a new Array. Do this by using the deletion techniques we've investigated above.
 
 Once you're done, we'll look at *searching Arrays*!
+
+### 27. Remove Element
+
+Given an integer array *nums* and an integer *val*, remove all occurrences of *val* in *nums in-place*. The relative order of the elements may be changed.
+
+Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the *first part* of the array *nums*. More formally, if there are *k* elements after removing the duplicates, then the first *k* elements of *nums* should hold the final result. It does not matter what you leave beyond the first *k* elements.
+
+Return *k* after placing the final result in the first *k* slots of *nums*.
+
+Do *not* allocate extra space for another array. You must do this by *modifying the input array in-place with O(1)* extra memory.
+
+Custom Judge:
+
+The judge will test your solution with the following code:
+
+```
+int[] nums = [...]; // Input array
+int val = ...; // Value to remove
+int[] expectedNums = [...]; // The expected answer with correct length.
+                            // It is sorted with no values equaling val.
+
+int k = removeElement(nums, val); // Calls your implementation
+
+assert k == expectedNums.length;
+sort(nums, 0, k); // Sort the first k elements of nums
+for (int i = 0; i < actualLength; i++) {
+    assert nums[i] == expectedNums[i];
+}
+```
+
+
+### Answer 6
+
+In computer science, an *in-place algorithm* is an algorithm which transforms input using no auxiliary data structure. However, a small amount of extra storage space is allowed for auxiliary variables. The input is usually overwritten by the output as the algorithm executes. An *in-place algorithm* updates its input sequence only through replacement or swapping of elements. An algorithm which is not in-place is sometimes called not-in-place or out-of-place.
+
+In-place can have slightly different meanings. In its strictest form, the algorithm can only have a constant amount of extra space, counting everything including function calls and pointers. However, this form is very limited as simply having an index to a length n array requires O(log n) bits. More broadly, in-place means that the algorithm does not use extra space for manipulating the input but may require a small though nonconstant extra space for its operation. Usually, this space is O(log n), though sometimes anything in O(n) is allowed.
+
+```javascript
+
+
+// Your input
+[1,2,3,0,0,0]
+3
+[2,5,6]
+3
+//Output
+[1,2,2,3,5,6]
+// Expected
+[1,2,2,3,5,6]
+```
+
