@@ -1481,7 +1481,7 @@ Custom Judge:
 
 The judge will test your solution with the following code:
 
-```
+```java
 int[] nums = [...]; // Input array
 int val = ...; // Value to remove
 int[] expectedNums = [...]; // The expected answer with correct length.
@@ -1496,6 +1496,35 @@ for (int i = 0; i < actualLength; i++) {
 }
 ```
 
+If all assertions pass, then your solution will be accepted.
+
+Example 1:
+
+Input: nums = [3,2,2,3], val = 3
+
+Output: 2, nums = [2,2,_,_]
+
+Explanation: Your function should return k = 2, with the first two elements of nums being 2.
+
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+Example 2:
+
+Input: nums = [0,1,2,2,3,0,4,2], val = 2
+
+Output: 5, nums = [0,1,4,0,3,_,_,_]
+
+Explanation: Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+
+Note that the five elements can be returned in any order.
+
+It does not matter what you leave beyond the returned k (hence they are underscores).
+
+Constraints:
+
+* 0 <= nums.length <= 100
+* 0 <= nums[i] <= 50
+* 0 <= val <= 100
 
 ### Answer 6
 
@@ -1504,16 +1533,51 @@ In computer science, an *in-place algorithm* is an algorithm which transforms in
 In-place can have slightly different meanings. In its strictest form, the algorithm can only have a constant amount of extra space, counting everything including function calls and pointers. However, this form is very limited as simply having an index to a length n array requires O(log n) bits. More broadly, in-place means that the algorithm does not use extra space for manipulating the input but may require a small though nonconstant extra space for its operation. Usually, this space is O(log n), though sometimes anything in O(n) is allowed.
 
 ```javascript
+/*
+Time: O(n)
+Space : O(1)
+*/
+const removeElement = (nums, val) => {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums.splice(i, 1)
+      i--
+    }
+  }
 
+  return nums.length
+};
+
+
+// O(n) solution
+var removeElement = function(nums, val) {
+    let rightIdx = nums.length - 1;
+    let rightVal;
+    for (let i = nums.length - 1; i > -1; i--) {
+        const element = nums[i];
+        if (element === val) {
+            if (rightVal !== undefined) {
+                nums[i] = rightVal;
+                nums[rightIdx] = '_';
+                rightIdx--;
+                rightVal = nums[rightIdx];
+            } else {
+                nums[i] = '_';
+                rightIdx--;
+            }
+        } else if (rightVal == undefined) {
+            rightVal = element;
+        }
+    }
+    return rightIdx + 1;
+};
 
 // Your input
-[1,2,3,0,0,0]
-3
-[2,5,6]
+[3,2,2,3]
 3
 //Output
-[1,2,2,3,5,6]
+[2,2]
 // Expected
-[1,2,2,3,5,6]
+[2,2]
 ```
 
