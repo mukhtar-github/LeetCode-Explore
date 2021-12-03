@@ -1788,3 +1788,225 @@ You can find out more about *binary search* on our *Binary Search Explore Card*.
 Hopefully, the *three basic Array operations* are clear now! Like always, there are a couple of problems for you to try for yourself now.
 
 After that, we'll be having a look at *In-Place Array Operations*. What are those, you might be asking? Let's not get ahead of ourselves though—you'll find out soon!
+
+### 1346. Check If N and Its Double Exist
+
+Given an array *arr* of integers, check if there exists two integers *N* and *M* such that *N* is the double of *M* ( i.e. *N = 2 x M*).
+
+More formally check if there exists two indices *i* and *j* such that:
+
+* i != j
+* 0 <= i, j < arr.length
+* arr[i] == 2 * arr[j]
+
+Example 1:
+
+Input: arr = [10,2,5,3]
+
+Output: true
+
+Explanation: N = 10 is the double of M = 5,that is, 10 = 2 * 5.
+
+Example 2:
+
+Input: arr = [7,1,14,11]
+
+Output: true
+
+Explanation: N = 14 is the double of M = 7,that is, 14 = 2 * 7.
+
+Example 3:
+
+Input: arr = [3,1,7,11]
+
+Output: false
+
+Explanation: In this case does not exist N and M, such that N = 2 * M.
+
+Constraints:
+
+* 2 <= arr.length <= 500
+* -10^3 <= arr[i] <= 10^3
+
+### Answer 8
+
+
+```javascript
+/*
+Background:
+
+1. Some JavaScript methods return undefined, some return false, and some -1 on not found logic
+2. As you go down different solutions, you will have more javascript than problem solving itself :) (or may be not)
+3. Depending on if we have enough memory or not, we can choose one of the answers
+    1. I would choose 1st solution Set
+    2. Or, if someone says no more memory, then would choose the 4th solution, the simpler for (i) for (j) loop
+
+Algo:
+
+1. Finding if we have an element that is double or half is the question
+2. That element should be not be same (which means element cannot be 0 because 0/2 = 0* 2 = 0)
+3. For each element e, as we move to right of array:
+    1. Check if its double or half exists in our cache (say Set/Map/Obj/Array/etc)
+        If so, we found an different element ( i != j condition of question) so return true
+    2. Now that we have seen this e, put in in the cache
+
+*/
+
+var checkIfExist = function(A) {
+    let set = new Set();
+
+    for (let e of A) {
+        if (set.has(e * 2) || set.has(e / 2))
+            return true;
+        set.add(e);
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let map = new Map();
+
+    for (let e of A) {
+        if (map.has(e * 2) || map.has(e / 2))
+            return true;
+        map.set(e, true);
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let obj = {};
+
+    for (let e of A) {
+        if (obj[e * 2] || obj[e / 2])
+            return true;
+        obj[e] = true;
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let n = A.length;
+
+    for (let i = 0; i < n; i++)
+        for (let j = 0; j < i; j++)
+            if ((A[i] === A[j] * 2) || (A[i] === A[j] / 2))
+                return true;
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.indexOf(e * 2) !== -1 || B.indexOf(e / 2) !== -1)
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let n = A.length;
+
+    for (let i = 0; i < n; i++)
+        if (
+            ((A.indexOf(A[i] * 2) !== -1 && A.indexOf(A[i] * 2) !== i)) ||
+            ((A.indexOf(A[i] / 2) !== -1 && A.indexOf(A[i] / 2) !== i))
+        )
+            return true;
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.includes((2 * e)) || B.includes(e / 2))
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.some((b) => b === e * 2) || B.some((b) => b === e / 2))
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.find((b) => b === e * 2) !== undefined || B.find((b) => b === e / 2) !== undefined)
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.filter((b) => b === e * 2)[0] !== undefined || B.filter((b) => b === e / 2)[0] !== undefined)
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    for (let e of A) {
+        if (B.findIndex((b) => b === e * 2) !== -1 || B.findIndex((b) => b === e / 2) !== -1)
+            return true;
+        B.push(e)
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let B = new Array();
+
+    while (A.length) {
+        if (B.includes((2 * A[0])) || B.includes(A[0] / 2))
+            return true;
+        B.push(A.shift())
+    }
+
+    return false
+};
+var checkIfExist = function(A) {
+    let e;
+
+    while ((e = A.shift()) !== undefined)
+        if (A.includes((2 * e)) || A.includes(e / 2))
+            return true;
+
+    return false
+};
+var checkIfExist = function(A) {
+    let e;
+
+    while ((e = A.pop()) !== undefined)
+        if (A.includes((2 * e)) || A.includes(e / 2))
+            return true;
+
+    return false
+};
+
+// Your input
+[10,2,5,3]
+//Output
+true
+// Expected
+true
+```
