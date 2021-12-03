@@ -1698,3 +1698,77 @@ If the index is not known, which is the case most of the time, then we can check
 ![Array_Search_1](https://leetcode.com/explore/learn/card/fun-with-arrays/527/searching-for-items-in-an-array/Figures/Array_Explore/Array_Search_1.png)
 
 Let's see the *linear search* algorithm in action, with all the edge cases handled properly. When we say edge cases, we basically mean scenarios that you wouldn't expect to encounter. For example, the element you're searching for might not even exist in the Array. Or, an even rarer, but possible, scenario is that the input Array doesn't contain any elements at all, or perhaps it is null. It's important to handle all of these edge cases within the code.
+
+```java
+public static boolean linearSearch(int[] array, int length, int element) {
+    // Check for edge cases. Is the array null or empty?
+    // If it is, then we return false because the element we're
+    // searching for couldn't possibly be in it.
+    if (array == null || length == 0) {
+        return false;
+    }
+
+    // Carry out the linear search by checking each element,
+    // starting from the first one.
+    for (int i = 0; i < length; i++) {
+        // We found the element at index i.
+        // So we return true to say it exists.
+        if (array[i] == element) {
+            return true;
+        }
+    }
+
+    // We didn't find the element in the array.
+    return false;
+}
+```
+
+That's the function we can call to determine whether or not a particular element is in an Array. Notice how we take care of the edge cases before proceeding with the actual search, and that we don't check the rest of the elements once we'd found the element we were looking for.
+
+There are many variations to this algorithm, such as returning the first location, last location, or all the locations (an element could be in the Array more than once). Let's see what happens when we call the *linearSearch* function.
+
+```java
+public class ArraySearch {
+    public static void main(String args[]) {
+
+        // Declare a new array of 6 elements
+        int[] array = new int[6];
+
+        // Variable to keep track of the length of the array
+        int length = 0;
+
+        // Iterate through the 6 indexes of the Array.
+        for (int i = 0; i < 6; i++) {
+            // Add a new element and increment the length as well
+            array[length++] = i;
+        }
+
+        // Print out the results of searching for 4 and 30.
+        System.out.println("Does the array contain the element 4? - " + ArraySearch.linearSearch(array, length, 4));
+        System.out.println("Does the array contain the element 30? - " + ArraySearch.linearSearch(array, length, 30));
+
+        // Does the array contain the element 4? - true
+        // Does the array contain the element 30? - false
+    }
+
+    public static boolean linearSearch(int[] array, int length, int element) {
+        // Check for edge cases
+        if (array == null || length == 0) {
+            return false;
+        }
+
+        // Check each element starting from the first one
+        for (int i = 0; i < length; i++) {
+            // We found the element at index i, so return true.
+            if (array[i] == element) {
+                return true;
+            }
+        }
+
+        // We didn't find the element in the array.
+        return false;
+    }
+}
+```
+
+As expected, we're able to find the element *4* in the Array, but not *30*.
