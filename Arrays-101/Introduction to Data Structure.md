@@ -2009,4 +2009,12 @@ var checkIfExist = function(A) {
 true
 // Expected
 true
+
+/*
+So nice you have shared all 4 methods. Would be also nice to know the time execution of each to compare.
+"Solution 4" is clearly the worst as it is O(n^2) where the others are O(n).
+IMHO, the benefit you obtain in space complexity O(1) isn't enough to justify the quadratic expression that runs on time.
+
+i have used the "Set solution" but the native Array.some method instead of the for-loop. As of Jun-23 2021, subsmission time was 96% faster than all JS submissions.
+*/
 ```
