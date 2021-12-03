@@ -2,7 +2,7 @@
 
 ## Arrays 101
 
-### Overview (Introduction)
+## Overview (Introduction)
 
 Arrays are a simple data structure for storing lots of similar items. They exist in all programming languages, and are used as the basis for most other data structures. On their own, Arrays can be used to solve many interesting problems. Arrays come up very often in interview problems, and so being a guru with them is a must!
 
@@ -17,7 +17,9 @@ After completing this Explore Card on Arrays, you will understand:
 * Implementing basic Array operations.
 * Simple programming techniques with Arrays.
 
-### Introduction
+## 1-Introduction
+
+In this chapter, we'll begin by looking at what an Array is, and what it's used for. We'll start by comparing Arrays to a real-world problem: storing lots of DVDs in an organized way. After that, we'll look at how to create and work with Arrays in Java.
 
 ### Array - A DVD box?
 
@@ -804,7 +806,7 @@ And that is the basics of Arrays that you'll need to get started! In the next ch
 
 Before that though, we have a few introductory Array problems for you to play around with, starting with the one we briefly looked at above. Enjoy!
 
-### Max Consecutive Ones
+### 485. Max Consecutive Ones
 
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
@@ -851,7 +853,7 @@ const findMaxConsecutiveOnes = (nums) => {
 3
 ```
 
-### Find Numbers with Even Number of Digits
+### 1295. Find Numbers with Even Number of Digits
 
 Given an array nums of integers, return how many of them contain an even number of digits.
 
@@ -912,7 +914,7 @@ return even;
 var findNumbers = (nums) => nums.map(String).filter(num => num.length % 2 === 0).length;
 ```
 
-### Squares of a Sorted Array
+### 977. Squares of a Sorted Array
 
 Given an integer array *nums* sorted in **non-decreasing** order, return an array of **the squares of each number** sorted in non-decreasing order.
 
@@ -962,7 +964,7 @@ var sortedSquares = function(nums) {
 [0,1,9,16,100]
 ```
 
-## Inserting Items Into an Array
+## 2-Inserting Items Into an Array
 
 In the previous chapter, we looked at what Arrays are, and the basic programming constructs of Arrays in Java. We're now going to use these basic constructs to implement three key operations for Arrays:
 
@@ -1299,7 +1301,7 @@ while (n>0 ){
 [1,2,2,3,5,6]
 ```
 
-## Deleting Items From an Array
+## 3-Deleting Items From an Array
 
 Next on the agenda is insertion's complement—deletion.
 
@@ -1679,7 +1681,7 @@ const removeDuplicates = (nums) => {
 [1,2]
 ```
 
-## Searching for Items in an Array
+## 4-Searching for Items in an Array
 
 Finally, we're going to look at the *linear search* algorithm—the most basic and versatile array search algorithm.
 
@@ -1772,3 +1774,17 @@ public class ArraySearch {
 ```
 
 As expected, we're able to find the element *4* in the Array, but not *30*.
+
+#### Binary Search
+
+*This section is optional. It briefly introduces a more advanced searching algorithm that you will learn more about in a later Explore Card.*
+
+There is another way of searching an Array. If the elements in the Array are in sorted order, then we can use *binary search*. *Binary search* is where we repeatedly look at the middle element in the Array, and determine whether the element we're looking for must be to the left, or to the right. Each time we do this, we're able to halve the number of elements we still need to search, making *binary search* a lot faster than *linear search*!
+
+The downside of *binary search* though is that it only works if the data is sorted. If we only need to perform a single search, then it's faster to just do a *linear search*, as it takes longer to sort than to *linear search*. If we're going to be performing a lot of searches, it is often worth sorting the data first so that we can use *binary search* for the repeated searches.
+
+You can find out more about *binary search* on our *Binary Search Explore Card*. For *Arrays 101*, it is okay for you to use either *linear search* or *binary search*.
+
+Hopefully, the *three basic Array operations* are clear now! Like always, there are a couple of problems for you to try for yourself now.
+
+After that, we'll be having a look at *In-Place Array Operations*. What are those, you might be asking? Let's not get ahead of ourselves though—you'll find out soon!
